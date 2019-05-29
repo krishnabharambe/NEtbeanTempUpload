@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="SalePane" prefHeight="800.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Purchase.FXMLPurchaseController">
+   <children>
+      <BorderPane layoutX="432.0" layoutY="261.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <right>
+            <AnchorPane prefHeight="200.0" prefWidth="320.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Accordion fx:id="accordion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <panes>
+                      <TitledPane fx:id="customerTP" animated="false" text="Supplier">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tbcustomer" layoutX="14.0" layoutY="14.0" onKeyReleased="#actiontbcustomerkeyreleased" prefHeight="78.0" prefWidth="290.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="tbcustomerColId" prefWidth="53.0" text="ID" />
+                                        <TableColumn fx:id="tbcustomercolname" prefWidth="238.99992752075195" text="Name" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                      </TitledPane>
+                      <TitledPane fx:id="StockTP" animated="false" text="P.Stock">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tbStock" onKeyReleased="#actiontbStockKeyReleased" prefHeight="78.0" prefWidth="290.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="tbStockcolid" prefWidth="53.0" text="ID" />
+                                          <TableColumn fx:id="tbstockcolname" prefWidth="238.99992752075195" text="Stock" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                      </TitledPane>
+                        <TitledPane fx:id="NewCustomerTP" animated="false" text="New Supplier">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane layoutX="11.199999809265137" layoutY="11.199999809265137" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="280.0" spacing="2.0">
+                                             <padding>
+                                                <Insets bottom="20.0" left="10.0" right="10.0" top="5.0" />
+                                             </padding>
+                                             <children>
+                                                <Label text="Name :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtName" prefHeight="30.0" prefWidth="100.0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Address :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextArea fx:id="txtAddress" prefHeight="36.0" prefWidth="290.0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextArea>
+                                                <Label text="Address Pincode :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtAddressPincode">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Contact :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtContact">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Alt Contact :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtAltContact">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Telephone :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtTelephone">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Email :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtCiustomerEmail">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Website :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtWebsite">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="GSTIN :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtGSTIN">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Pan/Tan">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtPanTan">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Bank Account No.">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtBankAccountNo">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Bank IFSC.">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="txtBankIFSC">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label text="Bank Branch :" />
+                                                <TextField fx:id="txtBankBranch">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <HBox prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#ActionReset" onKeyReleased="#ActionReset1" prefHeight="25.0" prefWidth="70.0" text="Reset">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button mnemonicParsing="false" onAction="#actionAdd" onKeyReleased="#actionAdd1" prefHeight="25.0" prefWidth="102.0" text="Add">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+         </right>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutX="39.0" layoutY="-14.0" prefHeight="40.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Supplier :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCustomerName" onAction="#actionMovetoCustomerSelection" prefHeight="25.0" prefWidth="258.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Id : ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCustomerId" editable="false" prefHeight="25.0" prefWidth="65.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Invoice Id :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtInvoiceId" editable="false" prefHeight="25.0" prefWidth="111.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Invoice Date :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="txtInvoiceDate" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="154.0" layoutY="164.0" prefHeight="40.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <Label text="P.Stock :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtStockName" onAction="#actionMoveToStockSelection" prefHeight="29.0" prefWidth="181.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="ID :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtStockid" editable="false" prefHeight="25.0" prefWidth="77.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="R.Stock :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtRstock" editable="false" prefHeight="25.0" prefWidth="89.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="HSN :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtHSN" editable="false" prefHeight="25.0" prefWidth="89.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Price :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPrice" editable="false" prefHeight="25.0" prefWidth="89.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="GST :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtGST" editable="false" prefHeight="25.0" prefWidth="84.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="164.0" layoutY="174.0" prefHeight="40.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                     <children>
+                        <Label text="Dis% :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtdiscount" prefHeight="29.0" prefWidth="81.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Qty. :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtquantity" prefHeight="25.0" prefWidth="77.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Taxable :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txttaxable" editable="false" prefHeight="29.0" prefWidth="144.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Payable :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtpayable" editable="false" prefHeight="29.0" prefWidth="145.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#actionAddTranscation" onKeyReleased="#actionAddTranscation1" prefHeight="30.0" prefWidth="218.0" text="ADD TRANSCATION">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon iconName="PLUS" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tbtransaction" onKeyReleased="#actiontbkey" prefHeight="287.0" prefWidth="910.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="130.0">
+                     <columns>
+                        <TableColumn fx:id="tbcoltransid" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="tbcolstaockname" prefWidth="176.0" text="Stock Name" />
+                        <TableColumn fx:id="tbcolhsn" prefWidth="124.0" text="Stock HSN" />
+                        <TableColumn fx:id="tbcolprice" prefWidth="124.0" text="Price" />
+                        <TableColumn fx:id="tbcoldiscount" prefWidth="70.0" text="Discount" />
+                        <TableColumn fx:id="tbcolgst" prefWidth="90.0" text="GST" />
+                        <TableColumn fx:id="tbcolqty" prefWidth="90.0" text="Qty" />
+                        <TableColumn fx:id="tbcoltotal" prefWidth="114.0" text="Total" />
+                     </columns>
+                  </TableView>
+                  <Label text="GST Report preview :" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="420.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="139.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="440.0">
+                     <children>
+                        <TableView fx:id="tbgst" prefHeight="139.0" prefWidth="669.0">
+                           <columns>
+                              <TableColumn fx:id="tbcolgsthsn" prefWidth="97.99996948242188" text="HSN" />
+                              <TableColumn fx:id="tbcoltaxable" prefWidth="88.0" text="Taxable Amt." />
+                              <TableColumn fx:id="tbcolcgstpercentage" prefWidth="68.0" text="CGST %" />
+                              <TableColumn fx:id="tbcolcgst" text="CGST" />
+                              <TableColumn fx:id="tbcolsgstpercentage" prefWidth="56.0" text="SGST %" />
+                              <TableColumn fx:id="tbcolsgst" prefWidth="63.0" text="SGST" />
+                              <TableColumn fx:id="tbcolgstpercentage" prefWidth="61.0" text="GST %" />
+                              <TableColumn fx:id="tbcolgstgst" prefWidth="110.0" text="GST" />
+                           </columns>
+                        </TableView>
+                        <VBox prefHeight="500.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Taxable Total :">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtfinalsubtotal" alignment="CENTER_RIGHT" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Total CGST :">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtfinalcgst" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="162.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Total SGST :">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtfinalsgst" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="163.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Total GST :">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtfinalgst" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="170.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="28.0" spacing="5.0">
+                                 <children>
+                                    <Label text="Total  :">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtfinaltotal" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="193.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="174.0" layoutY="184.0" prefHeight="40.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="590.0">
+                     <children>
+                        <Label text="Payment Remark :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPaymentRemark" prefHeight="29.0" prefWidth="255.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Date :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="PaymentDate" />
+                        <Label text="Status :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="txtPaymentStatus" prefWidth="150.0" />
+                        <Button mnemonicParsing="false" onAction="#actionAddUpdatePayment" onKeyReleased="#actionAddUpdatePayment1" prefHeight="30.0" prefWidth="98.0" text="UPDATE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon iconName="PLUS" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="184.0" layoutY="194.0" prefHeight="40.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="630.0">
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="112.0" text="Delivery Remark :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDeliveryRemark" prefHeight="29.0" prefWidth="255.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Date :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="DeliveryDate" />
+                        <Label text="Status :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="txtDeliveryStatus" prefWidth="150.0" />
+                        <Button mnemonicParsing="false" onAction="#actionAddUpdateDelivey" onKeyReleased="#actionAddUpdateDelivey1" prefHeight="30.0" prefWidth="98.0" text="UPDATE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon iconName="PLUS" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button layoutX="664.0" layoutY="670.0" mnemonicParsing="false" onAction="#actionGeneratePDF" onKeyReleased="#ActionGeneratePDF1" prefHeight="42.0" prefWidth="261.0" text="GENERATE PDF">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon iconName="PRINT" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

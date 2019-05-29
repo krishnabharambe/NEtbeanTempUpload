@@ -1,0 +1,4 @@
+.tile:hover{
+    -fx-border-width: 3px;
+    -fx-border-color: white;
+}
