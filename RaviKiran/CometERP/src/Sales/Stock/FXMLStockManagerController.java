@@ -5,6 +5,7 @@
  */
 package Sales.Stock;
 
+import PDFGeneration.PdfBarcodeGeneration;
 import Sales.Customer.FXMLCustomerManagerController;
 import dbController.Stock;
 import dbController.StockController;
@@ -100,6 +101,10 @@ public class FXMLStockManagerController implements Initializable {
     private Button btnNewStock;
     @FXML
     private AnchorPane Stockmaagerpane;
+    @FXML
+    private TextField NoOfBarcodes;
+    @FXML
+    private Button btnNewStock1;
 
     /**
      * Initializes the controller class.
@@ -455,6 +460,20 @@ public class FXMLStockManagerController implements Initializable {
             alert.showAndWait();
         }
 
+    }
+
+    @FXML
+    private void ActionGenerateBarcode(ActionEvent event) {
+        if (!updating.equals("")) {
+            String name = txtStockTitle.getText().trim();
+            int NoOf = 1;
+            if (NoOfBarcodes.getText().trim().matches("^[0-9]*[1-9][0-9]*$")) {
+                NoOf = Integer.valueOf(NoOfBarcodes.getText().trim());
+            }
+            
+            new PdfBarcodeGeneration(name,NoOf);
+
+        }
     }
 
 }
